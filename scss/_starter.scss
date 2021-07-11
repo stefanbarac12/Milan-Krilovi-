@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap');
+@import 'mixins';
+
+// <--- variables --->
+$primary: #bd9837;
+$bg: #0f0f0f;
+$white: #fff;
+$black: #000;
+$transition: 0.4s ease-in-out;
+// <--- starter --->
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 16px;
+    background-color: $bg;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+img {
+    display: block;
+    width: 100%;
+}
+// <--- classes --->
+.container {
+    width: 70%;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;
+    }
+}
+.active {
+    color: $primary !important;
+}
+h2 {
+    color: $primary;
+    font-size: 3.5rem;
+    font-style: italic;
+    @include underline;
+}
+h4::after {
+    content: '';
+    display: block;
+    height: 12px;
+    width: 12px;
+    background-color: $primary;
+    border-radius: 50%;
+    position: absolute;
+    left: -57px;
+    top: 0px;
+}
+.nav {
+    position: fixed;
+    z-index: 100;
+    left: 20%;
+    @media (min-width: 768px) and (max-width: 1024px) {
+        left: 0;
+    }
+    @media (max-width: 768px) {
+        @include flex(space-between, center);
+    }
+    @include flex(center, center);
+    padding: 20px 40px;
+    .logo {
+        @media (min-width: 768px) and (max-width: 1024px) {
+            position: static;
+        }
+        position: relative;
+        left: -650%;
+    }
+    ul {
+        @include flex(center, center);
+        flex: 1;
+        li {
+            @media (max-width: 768px) {
+                margin: 50px auto;
+                text-align: center;
+                font-size: 2rem;
+            }
+            margin: 0 30px;
+            @media (min-width: 768px) and (max-width: 1024px) {
+                margin: 20px;
+            }
+            a {
+                text-transform: uppercase;
+                color: $white;
+                transition: $transition;
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+        }
+    }
+}
+.dots {
+    z-index: 100;
+    @include flex(flex-start, center, column);
+    position: fixed;
+    bottom: 3%;
+    left: 2%;
+    @media (min-width: 768px) and (max-width: 1024px) {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
+    a {
+        height: 15px;
+        width: 15px;
+        color: $primary;
+        border: 2px solid $primary;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: $transition;
+        margin-bottom: 8px;
+        &:hover {
+            background-color: $primary;
+        }
+    }
+}
+.filled {
+    background-color: $primary !important;
+}
+.br {
+    border: 5px solid #2a2a2e;
+}
+
+

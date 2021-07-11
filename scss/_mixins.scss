@@ -1,0 +1,64 @@
+// <--- mixins --->
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin bg($url, $size: cover, $position: center,) {
+    background-image: $url;
+    background-position: $position;
+    background-size: $size;
+    background-repeat: no-repeat;
+}
+@mixin social($location) {
+    .social {
+        @if $location == "header" {
+            @include flex(center, center, column);
+        }
+        @else if $location == "section" {
+            @include flex(flex-start, center);
+            a {
+                margin-right: 30px;
+            }
+        }
+        @else if $location == "footer" {
+            @include flex(flex-start, center);
+            a {
+                margin-right: 30px;
+            }
+            i {
+                color: $primary !important;
+                border: 1px solid $primary !important;
+            }
+        }
+        a {
+            margin-bottom: 40px;
+            i {
+                transition: $transition;
+                color: $white;
+                border: 1px solid $white;
+                width: 30px;
+                border-radius: 50%;
+                padding: 5px;
+                text-align: center;
+                &:hover {
+                    color: $primary;
+                    transform: scale(1.2);
+                    border: 1px solid $primary;
+                }
+            }
+        }
+    }
+}
+@mixin underline {
+    &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width:  260px;
+        margin: 10px 0;
+        background: $primary;
+    }
+}

@@ -1,0 +1,760 @@
+@import 'starter';
+@import 'mixins';
+
+// <--- logo --->
+.logo {
+    width: 60px;
+    height: 60px;
+}
+// <--- pocetna --->
+#pocetna {
+    @include social("header");
+    @include bg(url(../img/pocetna.jpg), cover);
+    height: 100vh;
+    position: relative;
+    .title {
+        @include flex(center, center);
+        width: 40%;
+        margin: auto;
+        height: 110vh;
+        position: relative;
+        left: 15%;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        h1 {
+            color: $white;
+            font-weight: normal;
+            font-size: 1.8rem;
+        }
+        .navodnik-1 {
+            position: absolute;
+            top: 29%;
+            left: -2%;
+        }
+        .navodnik-2 {
+            position: absolute;
+            bottom: 36%;
+            left: 83%;
+        }
+        .potpis  {
+            position: absolute;
+            bottom: 12%;
+            left: 30%;
+            height: 250px;
+            width: 350px;
+        }
+    }
+    .social {
+        position: absolute;
+        right: 3%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+// <--- blog --->
+#blog {
+    .blogs {
+        padding: 200px 0;
+        @include flex(space-between, center);
+        .single-blog {
+            display: block;
+            position: relative;
+            flex: 0 0 25%;
+            margin-bottom: 80px;
+            &:nth-child(3) {
+                    margin-bottom: 0;
+            }
+            img {
+                border-radius: 30px;
+                height: 180px;
+                width: 320px;
+            }
+            h3 {
+                color: $primary;
+                background-color: $white;
+                display: inline-block;
+                padding-right:  50px;
+                padding-left:  10px;
+                position: absolute;
+                bottom: 4%;
+                left: 4%;
+            }
+        }
+    }
+}
+
+// <--- aktivnosti --->
+#aktivnosti {
+    position: relative;
+    background-color: $white;
+    .nav {
+        a {
+            color: $black !important;
+            &:hover {
+                color: $primary !important;
+            }
+            &.active {
+                color: $primary !important;
+            }
+        }
+    }
+    article {
+        padding: 50px 100px 0px 300px;
+        &:last-of-type {
+            padding-bottom: 200px;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        div {
+            line-height: 1.4;
+            padding-left: 50px;
+            border-left: 2px solid $primary;
+            h4 {
+                position: relative;
+                font-size: 1.2rem;
+                margin-top: 30px;
+                color: $primary;
+                font-weight: 700;
+            }
+            h5 {
+                font-weight: normal;
+                font-size: inherit;
+                margin: 0 0 00px 0;
+            }
+        }
+    }
+}
+// <--- oblici u aktivnosti --->
+.oblik-5 {
+    position: absolute;
+    right: -19%;
+    top: 10400px;
+}
+.oblik-4 {
+    position: absolute;
+    right: -20.2%;
+    top: 7900px;
+}
+.oblik-3 {
+    position: absolute;
+    right: -21.8%;
+    top: 4800px;
+}
+.oblik-2 {
+    position: absolute;
+    right: -14.6%;
+    top: 2700px;
+}
+.oblik-1 {
+    position: absolute;
+    right: -14.4%;
+    top: 60px;
+}
+// <--- foto --->
+#foto {
+        .row {
+            height: 100%;
+            margin-bottom: 30px;
+            .col-lg-2 {
+                cursor: pointer;
+                &:hover img {
+                    opacity: 0.3;
+                }
+                &:hover p {
+                    opacity: 1;
+                    user-select: none;
+                }
+                img {
+                    transition: $transition;
+                    // height: 250px;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                p {
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-transform: uppercase;
+                    width: 95%;
+                    font-size: .7rem;
+                    padding: 0 20px;
+                    text-align: center;
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+        }
+        #gallery {
+            margin: 250px auto;
+        }
+        .carousel-control-prev  {
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+        .carousel-control-next {
+            position: absolute;
+            right: 0%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+        .modal .carousel-control-prev  {
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+        .modal .carousel-control-next {
+            position: absolute;
+            right: -20%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+}
+// <--- video --->
+#video {
+    .videos {
+        position: relative;
+        padding: 150px 0;
+        h2 {
+            padding-bottom: 30px;
+        }
+        .carousel-control-prev {
+            position: absolute;
+            left: -10%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+        .carousel-control-next {
+            position: absolute;
+            right: -25%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            height: 100px;
+            color: $white;
+        }
+    }
+}
+// <--- o-meni --->
+#o-meni {
+    background-image: url(../img/O-meni.jpg);
+    background-repeat: no-repeat;
+    .istorijat {
+        padding-top: 300px;
+        padding-bottom: 100px;
+    }
+    p {
+        margin: 0;
+        margin-top: 60px;
+        color: $white;
+        font-size: 1.3rem;
+        line-height: 1.6;
+    }
+}
+// <--- kontakt --->
+#kontakt {
+    background-image: url(../img/Kontakt.jpg);
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+    height: 100vh;
+    .cta {
+        @include social("section");
+        @include flex(space-between, flex-end);
+        padding: 180px;
+        article:first-child {
+            h2 {
+                padding-bottom: 60px;
+            }
+            div {
+                padding-bottom: 20px;
+                i {
+                    color: $primary;
+                    font-size: 2rem;
+                    transform: translateY(6px);
+                }
+                span {
+                    color: $white;
+                    margin-left: 15px;
+                }              
+            }
+        }
+        article:last-child {
+            p {
+                color: $primary;
+                font-size: 1.4rem;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+// <--- footer --->
+footer {
+    @include flex(space-between, center);
+    @include social("footer");
+    padding: 100px;
+    background-color: $white;
+    article {
+        &:nth-child(1) {
+            flex: 1;
+            li {
+                margin-bottom: 10px;
+                a {
+                    color: $black;
+                    font-size: 1.6rem;
+                    transition: $transition;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        &:nth-child(2) {
+            flex: 2;
+            q {
+                font-size: 1.6rem;
+                color: $primary;
+                text-align: left;
+                font-style: italic;
+            }
+            p {
+                font-size: 1.4rem;
+                font-style: italic;
+            }
+        }
+        &:nth-child(3) {
+            flex: 1;
+            h2 {
+                padding-bottom: 40px;
+            }
+            .social {
+                padding-top: 20px;
+            }
+            & > div {
+                padding-bottom: 20px;
+                & > i {
+                    color: $primary;
+                    font-size: 2rem;
+                    transform: translateY(6px);
+                }
+                span {
+                    margin-left: 15px;
+                }   
+            }
+        }
+    }
+}
+// <--- modal --->
+.modal {
+    // position: absolute;
+    // height: 80%;
+    margin-top: 6%;
+   .carousel {
+        height: 100%;
+   }
+   .carousel-inner {
+        height: 100%;
+   }
+   .carousel-item {
+       height: 100%;
+        .row {
+            height: 100%;
+            div:first-child {
+                width: 40%;
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+        }
+        div:last-child {
+                width: 50%;
+                margin: 60px auto;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scrollbar-width: none;
+                p {
+                    height: 100%;
+                }
+            }    
+       }
+   }
+   .modal-dialog {
+       max-width: 80%;
+       margin: auto;
+   }
+   .modal-body {
+        padding: 0;
+        height: 700px;   
+   }
+}
+// <--- responsive 769px - 1024px --->
+@media (min-width: 769px) and (max-width: 1024px) {
+    // <--- pocetna --->
+    #pocetna {
+        @include bg(url(../img/pocetna.jpg), cover, left);
+        .title {
+            left: -25%;
+            h1 {
+                font-size: 1.5rem;
+                span {
+                    font-size: 5rem;
+                }
+            }
+            .navodnik-1 {
+                top: 20%;
+                left: 0%;
+            }
+            .navodnik-2 {
+                position: absolute;
+                bottom: 20%;
+                left: 0;
+            }
+            .potpis  {
+                position: absolute;
+                bottom: 12%;
+                left: 90%;
+                height: 250px;
+                width: 350px;
+            }
+        }
+    }
+    // <--- blog --->
+    #blog {
+        .blogs {
+            height: auto;
+            @include flex(center, center);
+            .blog-div {
+                margin: 0 20px;
+                margin-bottom: 80px;
+            }
+        }
+    }
+
+    // <--- aktivnosti --->
+    #aktivnosti {
+        article {
+            padding: 50px 100px 0px 50px;
+        }
+    }
+    // <--- oblici u aktivnosti --->
+    .oblik-5, 
+    .oblik-4, 
+    .oblik-3, 
+    .oblik-2, 
+    .oblik-1 {
+        display: none;
+    }
+    // <--- foto --->
+    #foto {
+            .row {
+                .col-md-4 {
+                    margin-bottom: 30px;
+                    img {
+                        height: 250px;
+                    }
+                }
+            }
+            .carousel-control-prev  {
+                left: 5%;
+                top: 49%;
+            }
+            .carousel-control-next {
+                right: -10%;
+                top: 49%;
+            }
+            .modal .carousel-control-prev  {
+                left: -6%;
+                top: 50%;
+            }
+            .modal .carousel-control-next {
+                right: -22%;
+                top: 50%;
+            }
+    }
+    // <--- o-meni --->
+    #o-meni {
+        background-position: center;
+        .istorijat {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    // <--- kontakt --->
+    #kontakt {
+        height: 70vh;
+        .cta {
+            @include flex(space-between, flex-end);
+            padding: 100px 0px;
+        }
+    }
+    // <--- footer --->
+    footer {
+        article {
+            &:nth-child(1) {
+                flex: 0 0 50%;
+            }
+            &:nth-child(3) {
+                margin-top: 50px;
+            }
+        }
+    }
+    // <--- modal --->
+    #modal {
+        position: fixed;
+        height: 80%;
+        margin-top: 25%;
+ 
+        .carousel-item {
+            .row {
+                flex-direction: column;
+                div:first-child {
+                    width: 100%;
+                }
+                div:last-child {
+                    width: 100%;
+                    margin: 20px auto;
+                    padding-left: 50px;
+                }    
+            }
+        }
+    }
+}
+   // <--- responsive 768x --->
+@media (max-width: 768px) {
+    #pocetna {
+        @include bg(url(../img/pocetna.jpg), cover, left);
+        .title {
+            left: -25%;
+            h1 {
+                font-size: 1.2rem;
+                span {
+                    font-size: 5rem;
+                }
+            }
+            .navodnik-1 {
+                top: 22%;
+                left: 0%;
+            }
+            .navodnik-2 {
+                position: absolute;
+                bottom: 22%;
+                left: 0%;
+            }
+            .potpis  {
+                position: absolute;
+                bottom: 12%;
+                left: 30%;
+                height: 250px;
+                width: 350px;
+            }
+        }
+    }
+    // <--- blog --->
+    #blog {
+        .blogs {
+            @include flex(center, center);
+            .blog-div {
+                margin-bottom: 80px;
+            }
+        }
+    }
+    // <--- aktivnosti --->
+    #aktivnosti {
+        nav {
+            a {
+                color: $white !important;
+                &:hover {
+                    color: $primary !important;
+                }
+                &.active {
+                    color: $primary !important;
+                }
+            }
+        }
+        article {
+            padding: 50px 100px 0px 50px;
+        }
+    }
+    // <--- oblici u aktivnosti --->
+    .oblik-5, 
+    .oblik-4, 
+    .oblik-3, 
+    .oblik-2, 
+    .oblik-1 {
+        display: none;
+    }
+    // <--- foto --->
+    #foto {
+        .row {
+            .col-lg-2 {
+                margin-bottom: 30px;
+            }
+        }
+        .carousel-control-prev  { 
+            left: 20%;
+            top: 97%;
+            font-size: 5rem;
+        }
+        .carousel-control-next {
+            right: 10%;
+            top: 97%;
+            font-size: 5rem;
+        }
+
+        .modal .carousel-control-prev  {
+            left: 15%;
+            top: 107%;
+        }
+        .modal .carousel-control-next {
+            right: 0%;
+            top: 107%;
+        }
+    }
+    // <--- video --->
+    #video {
+        .videos {
+            .carousel-control-prev {
+                left: 10%;
+                top: 115%;
+                font-size: 5rem;
+            }
+            .carousel-control-next {
+                right: -5%;
+                top: 115%;
+                font-size: 5rem;
+            }
+        }
+    }
+    // <--- o-meni --->
+    #o-meni {
+        background-position: center;
+        .istorijat {
+            padding-top: 120px;
+            padding-bottom: 40px;
+        }
+        p {
+            margin: 0;
+            margin-top: 60px;
+            color: $white;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+    // <--- kontakt --->
+    #kontakt {
+        height: 70vh;
+        .cta {
+            @include flex(space-between, flex-end);
+            padding: 100px 0px;
+        }
+    }
+    // <--- footer --->
+    footer {
+        article {
+            &:nth-child(1) {
+                flex: 0 0 100%;
+            }
+            &:nth-child(2) {
+                flex: 0 0 100%;
+                padding: 50px 0;
+            }
+            &:nth-child(3) {
+                margin-top: 50px;
+            }
+        }
+    }
+    // <--- modal --->
+    .modal {
+        position: fixed;
+        height: 80%;
+        margin-top: 25%;
+        .carousel-item {
+            .row {
+                flex-direction: column;
+                div:first-child {
+                    width: 100%;
+                }
+                div:last-child {
+                    width: 100%;
+                    margin: 20px auto;
+                    padding-left: 50px;
+                }    
+            }
+        }
+        .close {
+            position: absolute;
+            font-size: 5rem;
+            z-index: 200;
+            right: 5%;
+            color: $white;
+        }
+    }
+    // <--- hamburger-menu --->
+    ul {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        transition: 0.2s ease-out;
+        background-color: $black;
+        
+    }
+    ul.show {
+        display: block;
+        right: 0%;
+        transition: 0.2 ease-in;
+        z-index: 200;
+    }
+    .wrapper {
+        position: fixed;
+        right: 10%;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 200;
+    }
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: $primary;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .change .bar2 {opacity: 0;}
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+}
